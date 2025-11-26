@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lucas Miedzyrzecki – Data Scientist Junior</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Lucas Miedzyrzecki, Data Scientist with interest in statistics, econometrics, deep learning and computer vision." />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-alt: #0b1020;
+            --accent: #6366f1;
+            --accent-soft: rgba(99, 102, 241, 0.15);
+            --accent-2: rgb(64, 111, 199);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2937;
+            --card-bg: #0f172a;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+            --radius-lg: 18px;
+            --radius-xl: 26px;
+            --transition-fast: 0.18s ease-out;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+            color: var(--text);
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Layout */
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 3rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent);
+            border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+        }
+
+        .nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0, #4f46e5, #1e293b 55%, #020617 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4), 0 10px 25px rgba(15, 23, 42, 0.9);
+        }
+
+        .nav-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .nav-sub {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .nav-link {
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding: 0.45rem 0.7rem;
+            border-radius: 999px;
+            transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+            background: rgba(15, 23, 42, 0.9);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta {
+            padding: 0.45rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            background: linear-gradient(135deg, #4f46e5, #a6a5a8);
+            color: white;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 8px 22px rgba(79, 70, 229, 0.45);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 40px rgba(79, 70, 229, 0.7);
+            filter: brightness(1.07);
+        }
+
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+            gap: 2.5rem;
+            align-items: center;
+            padding: 2.2rem 0 1.8rem;
+        }
+
+        .hero-kicker {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent-2);
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 3vw + 1rem, 3.15rem);
+            font-weight: 700;
+            margin-top: 0.4rem;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #07439c, #a6a5a8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            margin-top: 0.75rem;
+            color: var(--muted);
+            font-size: 0.97rem;
+            max-width: 32rem;
+        }
+
+        .hero-subtitle strong {
+            color: #e5e7eb;
+            font-weight: 500;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1.1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            border-radius: 999px;
+            padding: 0.3rem 0.75rem;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: var(--muted);
+            background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), rgba(15, 23, 42, 0.85));
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            border-radius: 999px;
+            padding: 0.55rem 1.15rem;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--text);
+            cursor: pointer;
+            transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .btn-primary {
+            border: none;
+            background: linear-gradient(135deg, #4f46e5, #22c5bd);
+            color: white;
+            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.55);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 20px 48px rgba(37, 99, 235, 0.9);
+        }
+
+        .hero-meta {
+            margin-top: 1.3rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-meta span {
+            margin-top: 0.9rem;
+            margin-right: 0.9rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-right {
+    position: relative;
+        }
+
+
+        .hero-card {
+            border-radius: var(--radius-xl);
+            padding: 1.4rem 1.25rem 1.3rem;
+            background: radial-gradient(circle at top, rgba(55, 65, 81, 0.45), #020617 60%);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        
+        .hero-floating {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 220px;
+            height: 220px;
+            transform: translate(-50%, -50%);
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: conic-gradient(
+                from 180deg at 50% 50%,
+                rgba(99, 102, 241, 0.1),
+                rgba(34, 91, 197, 0.4),
+                rgba(99, 102, 241, 0.8),
+                rgba(99, 102, 241, 0.8),
+                rgba(15, 23, 42, 0.9)
+            );
+            opacity: 0.8;
+            filter: blur(1px);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.95);
+            z-index: 0;
+        }
+
+
+        .hero-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-highlight {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .hero-highlight span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .stat {
+            border-radius: 13px;
+            padding: 0.55rem 0.7rem;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(31, 41, 55, 0.9);
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+
+        /* Sections */
+
+        section {
+            margin-top: 2.4rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .section-kicker {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--accent-2);
+            margin-bottom: 0.15rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--muted);
+            max-width: 45rem;
+        }
+
+        /* About */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.5fr);
+            gap: 1.75rem;
+        }
+
+        .about-card,
+        .experience-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(31, 41, 55, 0.9);
+            padding: 1.15rem 1.15rem;
+        }
+
+        .about-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .about-card p + p {
+            margin-top: 0.6rem;
+        }
+
+        .about-highlights {
+            margin-top: 0.85rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .pill {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            color: var(--muted);
+            background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), rgba(15, 23, 42, 0.9));
+        }
+
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .exp-item {
+            padding: 0.6rem 0.7rem;
+            border-radius: 12px;
+            border: 1px solid rgba(31, 41, 55, 0.9);
+            background: rgba(15, 23, 42, 0.75);
+        }
+
+        .exp-role {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .exp-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .exp-tags {
+            margin-top: 0.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .exp-tag {
+            font-size: 0.7rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .skill-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(31, 41, 55, 0.9);
+            padding: 0.8rem 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .skill-title {
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .skill-list {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .skill-list span {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 999px;
+            padding: 0.1rem 0.45rem;
+        }
+        .hero-photo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        .hero-photo {
+                width: 240px;
+                height: 240px;
+                object-fit: cover;
+                border-radius: 45%;
+                border: 3px solid rgb(167, 174, 182);
+                box-shadow: 0 20px 4100px #00b7ff;
+            }
+        
+        /* Projects */
+
+        .projects-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .projects-toolbar span {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .filter-chip {
+            font-size: 0.78rem;
+            border-radius: 999px;
+            padding: 0.25rem 0.7rem;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--muted);
+            cursor: pointer;
+            transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .filter-chip.active {
+            background: var(--accent-soft);
+            color: #e5e7eb;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(31, 41, 55, 0.9);
+            padding: 0.9rem 0.9rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.16), transparent 55%);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+            pointer-events: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.8);
+            box-shadow: 0 20px 55px rgba(15, 23, 42, 0.95);
+            background: radial-gradient(circle at top, rgba(30, 64, 175, 0.55), rgba(15, 23, 42, 0.98));
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+        }
+
+        .project-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.28rem;
+            margin-top: 0.2rem;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            border-radius: 999px;
+            padding: 0.18rem 0.55rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.4rem;
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            border-radius: 999px;
+            padding: 0.18rem 0.55rem;
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            background: rgba(15, 23, 42, 0.9);
+            cursor: pointer;
+            transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .project-link:hover {
+            background: rgba(37, 99, 235, 0.2);
+            border-color: #60a5fa;
+            color: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            border-radius: var(--radius-lg);
+            background: rgba(15, 23, 42, 0.97);
+            border: 1px solid rgba(31, 41, 55, 0.9);
+            padding: 1rem 1.1rem;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .contact-actions {
+            margin-top: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .social-link {
+            font-size: 0.86rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            border-radius: 999px;
+            padding: 0.42rem 0.8rem;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.9);
+            transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: #60a5fa;
+            transform: translateY(-1px);
+            color: #e5e7eb;
+        }
+
+        .contact-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(31, 41, 55, 0.9);
+            font-size: 0.78rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        footer span {
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                padding-top: 1.75rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-card {
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                padding-inline: 1rem;
+            }
+
+            .hero-title {
+                font-size: 1.9rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-right {
+                flex-wrap: wrap;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-left">
+                <div class="nav-logo">LM</div>
+                <div>
+                    <div class="nav-title">Lucas Miedzyrzecki</div>
+                    <div class="nav-sub">Data Scientist</div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Let's talk
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <div>
+                <div class="hero-kicker">Portfolio · Data Science & Machine Learning</div>
+                <h1 class="hero-title">
+                    Hi, I'm Lucas a <span>Data Scientist Junior</span>.
+                </h1>
+                <p style="text-align:justify;" class="hero-subtitle">
+                Holder of a <strong>Master's degree</strong> in <strong>Statistics & Econometrics</strong> 
+                with a major in <strong>Data Science</strong> from the <strong>Toulouse School of Economics</strong>.
+                I am passionate about creating high-performance predictive models by leveraging both solid
+                theoretical foundations in mathematics and modern <strong>machine learning</strong> 
+                and <strong>deep learning</strong> techniques.
+                </p>
+
+                <div class="hero-tags">
+                    <span class="tag">Deep Learning (PyTorch · TensorFlow)</span>
+                    <span class="tag">Computer Vision (CNN, YOLO, SAM, InstanSeg)</span>
+                    <span class="tag">Statistical Learning & Econometrics</span>
+                    <span class="tag">Streamlit & RShinyfor Visualization</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="assets/cv_Lucas_Miedzyrzecki_2025_compact.pdf" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Download My CV
+                    </a>
+                    <a class="btn" href="https://github.com/lucasmtse" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+                    <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                        <!-- TODO: replace with your real LinkedIn URL -->
+                        <i class="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Based in Toulouse, France</span>
+                    <span><i class="fa-solid fa-language"></i> French · English</span>
+                </div>
+            </div>
+
+            <div class="hero-right">
+    <div class="hero-photo-container">
+        <img src="assets/photo_cv.jpg" class="hero-photo" alt="Lucas photo">
+    </div>
+</div>
+        </section>
+
+        <!-- ABOUT & EXPERIENCE -->
+        <section id="about">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">About</div>
+                    <h2 class="section-title">Who I am</h2>
+                </div>
+              
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <p style="text-align:justify;">
+                   
+                        My name is Lucas, I'm 23 years old and I've lived in Toulouse my entire life. 
+                        I studied for five years at the <strong>Toulouse School of Economics</strong> where I completed 
+                        a Master's degree in <strong>Statistics & Econometrics</strong>.  
+                        It was during these years that I discovered <strong>machine learning</strong>, and from the very first courses, 
+                        I developed a strong interest for predictive modelling and statistical learning.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        In my second year of the Master's program, I was introduced to <strong>artificial neural networks</strong> and 
+                        quickly became fascinated by their ability to learn complex patterns. 
+                        This curiosity naturally led me to focus on <strong>deep learning</strong> and <strong>machine learning</strong>, 
+                        and I had the opportunity to carry out my internship on <strong>convolutional neural networks</strong> (CNNs), a family
+                         of Neural Networks specifically designed for image analysis. 
+                    </p>
+
+                    <p style="text-align:justify;">
+                        Outside of data and ML, I'm someone who loves staying active.  
+                        I practice <strong>skiing</strong> and <strong>surfing</strong> whenever I can, and I regularly go to the gym, 
+                        it keeps me grounded and motivated.  
+                        I also enjoy <strong>reading</strong>, especially books or papers that help me stay curious, open-minded, 
+                        and inspired.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        On the side, I keep developing various <strong>personal projects on GitHub</strong>: Formula 1 <strong>analytics dashboard</strong> with APIs, 
+                        <strong>anomaly detection </strong> for fraud, plates detection with <strong>YOLO</strong>, and more.
+                        I like building clean, well-documented, reproducible code, and I'm always looking for new ideas 
+                        to sharpen my skills and explore different areas of <strong>Data Science and Machine Learning</strong>.
+                    </p>
+
+                    <div class="about-highlights">
+                        <span class="pill">Master Statistics and Econometrics – TSE</span>
+                        <span class="pill">DL & ML</span>
+                        <span class="pill">Hobbies: Sport, Reading, Programming</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-list">
+                        <div class="exp-item">
+                            <div class="exp-role">Data Science Intern – IPMC (CNRS / IPMC)</div>
+                            <div class="exp-meta">2025 · Sophia-Antipolis · Biomedical cells detection</div>
+                            <div class="exp-tags">
+                                <span class="exp-tag">QuPath</span>
+                                <span class="exp-tag">InstanSeg / U-Net</span>
+                                <span class="exp-tag">Python · PyTorch</span>
+                                <span class="exp-tag">Evaluation models</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-role">Data Scientist Intern – Oncopole (Toulouse)</div>
+                            <div class="exp-meta">2024 · Toulouse · Scoring patient selection</div>
+                            <div class="exp-tags">
+                                <span class="exp-tag">Data cleaning</span>
+                                <span class="exp-tag">Visualization</span>
+                                <span class="exp-tag">R · Python</span>
+                            </div>
+                        </div>
+
+                         <div class="exp-item">
+                            <div class="exp-role">Consulting – Removall & TSE</div>
+                            <div class="exp-meta">2025 · Toulouse · Price analysis Carbon </div>
+                            <div class="exp-tags">
+                                <span class="exp-tag">Data cleaning</span>
+                                <span class="exp-tag">Visualization</span>
+                                <span class="exp-tag">R · Python</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-role">Master Statistics & Econometrics (Data Science)</div>
+                            <div class="exp-meta">2023–2025 · Toulouse School of Economics </div>
+                            <div class="exp-tags">
+                                <span class="exp-tag">ML & DL</span>
+                                <span class="exp-tag">Econometrics</span>
+                                <span class="exp-tag">Probability & statistics</span>
+                                <span class="exp-tag">Game theory</span>
+                                <span class="exp-tag">Time Series</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-role">Dual Degree Economics & Mathematics – TSE</div>
+                            <div class="exp-meta">2020–2023 · Toulouse School of Economics</div>
+                            <div class="exp-tags">
+                                <span class="exp-tag">Mathematics</span>
+                                <span class="exp-tag">Micro / Macro</span>
+                                <span class="exp-tag">Probability & statistics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">Skills</div>
+                    <h2 class="section-title">What I work with</h2>
+                </div>
+
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-title">Languages</div>
+                    <div class="skill-list">
+                        Python, R, SQL, basic Bash · Comfortable with Jupyter, VS Code, RStudio.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">ML & Statistics</div>
+                    <div class="skill-list">
+                        Supervised & unsupervised learning, anomaly detection, regression, panel data models, time series, feature engineering,
+                        cross-validation, hyperparameter tuning.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">Deep Learning</div>
+                    <div class="skill-list">
+                        <span>PyTorch</span> · <span>TensorFlow / Keras</span> · RNN, CNNs, U-Net, ResNet, autoencoders, fine-tuning, data-augmentation.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">Computer Vision</div>
+                    <div class="skill-list">
+                        YOLOv10 for object detection, U-Net-style segmentation, QuPath for histology, preprocessing, data augmentation.
+                    </div>
+                </div>
+
+
+                <div class="skill-card">
+                    <div class="skill-title">Visualization of Insights</div>
+                    <div class="skill-list">
+                        Matplotlib, seaborn, Plotly, Streamlit · building dashboards, interactive plots, and clear reports.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">Tools & Workflow</div>
+                    <div class="skill-list">
+                        Git/GitHub, Conda, virtual environments, README & documentation, reproducible notebooks.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">Soft skills</div>
+                    <div class="skill-list">
+                        Curiosity, autonomy, teaching mindset, ability to explain technical results to non-experts, teamwork.
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-title">Languages (human)</div>
+                    <div class="skill-list">
+                        French (native), English (fluent) – comfortable writing technical documentation and presenting, Spanish (intermediate).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">Projects</div>
+                    <h2 class="section-title">Selected work</h2>
+                    <h6 class="section-subtitle">
+                        Most of them are available on GitHub with code,
+                    notebooks, and documentation.
+                    </h6>
+                </div>
+            </div>
+
+            <div class="projects-toolbar">
+                <span>Filter by type:</span>
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="vision">Computer Vision</button>
+                <button class="filter-chip" data-filter="analytics">Analytics & Viz</button>
+                <button class="filter-chip" data-filter="anomaly">Anomaly / Fraud</button>
+                <button class="filter-chip" data-filter="other">Agent AI</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- PROJECT InstanSeg IPMC -->
+                <article class="project-card" data-tags="vision">
+                    <div class="project-badge">Biomedical · Deep Learning</div>
+                    <h3 class="project-title">Detection of fluorescence cells</h3>
+                    <p class="project-desc">
+                        Creation of a dataset of raw images and masks from QuPath annotations (semi-automated shape segmentation). Use the InstanSeg pipeline 
+                        to train our deep learning model to detect cells across the slices. 
+                        Evaluation of model performance with IoU, precision, recall, and F1 score.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python · PyTorch</span>
+                        <span class="project-tag">InstanSeg & U-Net</span>
+                        <span class="project-tag">QuPath</span>
+                    </div>
+                    <!--div class="project-footer">
+                        <span>Research · Internship IPMC</span>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/lucasmtse" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div-->
+                </article>
+
+                <!-- PROJECT F1 Season Analytics -->
+                <article class="project-card" data-tags="analytics">
+                    <div class="project-badge">Sports Analytics · F1</div>
+                    <h3 class="project-title">F1 Season Analytics – Streamlit dashboard</h3>
+                    <p class="project-desc">
+                        Interactive Streamlit app fetching Formula&nbsp;1 data via APIs to analyze full seasons and Grand
+                        Prix sessions: lap times, tyre strategies, driver pace, cumulative points, and race comparisons,
+                        with rich visualizations (line plots, boxplots, delta analysis).
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Streamlit</span>
+                        <span class="project-tag">APIs</span>
+                        <span class="project-tag">Plotly</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Personal project</span>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/lucasmtse/f1-season-analytics" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT Detecting outliers in financial transactions -->
+                <article class="project-card" data-tags="anomaly">
+                    <div class="project-badge">Anomaly Detection · Fraud</div>
+                    <h3 class="project-title">Detecting outliers in financial transactions</h3>
+                    <p class="project-desc">
+                        Comparison of several unsupervised methods to detect suspicious transactions:
+                        Isolation Forest, One-Class SVM, Local Outlier Factor, and autoencoder. Includes evaluation
+                        metrics (precision, recall, F1), synthetic 2D visualizations, and discussion of limitations
+                        of unsupervised fraud detection.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Isolation Forest</span>
+                        <span class="project-tag">One-Class SVM</span>
+                        <span class="project-tag">Autoencoder</span>
+                        <span class="project-tag">scikit-learn · Keras</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Personal project</span>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/lucasmtse/Detecting-Outliers-in-Transactions" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT Plate detection -->
+                <article class="project-card" data-tags="vision">
+                    <div class="project-badge">Computer Vision</div>
+                    <h3 class="project-title">License plate detection with YOLOv10</h3>
+                    <p class="project-desc">
+                    Training and fine-tuning of a YOLOv10 model to detect license plates in videos.
+                    The goal of this project is to build an application where users can input one or several plate
+                    numbers. If a detected plate matches a user-defined target, the corresponding vehicle is 
+                    automatically highlighted and tracked with a red bounding box.
+                </p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">YOLOv10</span>
+                        <span class="project-tag">Object detection</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Computer Vision</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Personal project: In development</span>
+                        
+                    </div>
+                </article>
+
+                <!-- PROJECT RFM/Migration -->
+                <article class="project-card" data-tags="analytics">
+                    <div class="project-badge">Marketing · Customer Analytics</div>
+                    <h3 class="project-title">RFM segmentation & customer migration</h3>
+                    <p class="project-desc">
+                        RFM analysis of customer data with recency, frequency, and monetary value segmentation using
+                        quantiles. Includes migration tables between years, chord diagrams, and visualizations to
+                        understand customer loyalty and value evolution.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">R · ggplot2</span>
+                        <span class="project-tag">RFM</span>
+                        <span class="project-tag">Segmentation</span>
+                        <span class="project-tag">Marketing analytics</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Personal / academic project</span>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/lucasmtse/Client-Segmentation" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- PROJECT Tweet similarity -->
+                <article class="project-card" data-tags="anomaly analytics">
+                    <div class="project-badge">NLP · Social Media</div>
+                    <h3 class="project-title">Tweet similarity with embeddings & cosine distance</h3>
+                    <p class="project-desc">
+                        Text preprocessing and embedding extraction with spaCy to represent tweets in a vector space.
+                        Use of cosine similarity between embeddings to retrieve the most relevant or similar tweets to
+                        a query.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">spaCy</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">Cosine similarity</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Personal / academic (soon upload on github)</span>
+                        
+                    </div>
+                </article>
+
+                <!-- PROJECT Chat app  -->
+                <article class="project-card" data-tags="analytics other">
+                    <div class="project-badge">AGENT AI · LLM</div>
+                    <h3 class="project-title">Interactive chat bot for F1 fans</h3>
+                    <p class="project-desc">
+                        An interactive AI assistant to explore Formula 1 seasons and Grand Prix sessions 
+                        using OpenF1 and Ergast APIs, with intelligent text generation powered by Mistral. 
+                        The LLM is using the facts extract on the data base for answer to a query.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Streamlit</span>
+                        <span class="project-tag">Plotly</span>
+                        <span class="project-tag">Data storytelling</span>
+                    </div>
+                    <div class="project-footer">
+                        <span>Side projects</span>
+                        <div class="project-links">
+                            <a class="project-link" href="https://github.com/lucasmtse/f1-chat-app" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- CONTACT -->
+        <section id="contact" style="margin-top: 3.5rem;">
+            <div class="section-header" style="text-align: center;">
+                <div>
+                    <div class="section-kicker">Contact </div>
+                    <h2 class="section-title">Get in touch</h2> 
+                </div>
+                
+            </div>
+
+                <div style="
+                margin: 2.5rem auto 0;
+                max-width: 600px;
+                background: rgba(41, 48, 65, 0.9);
+                padding: 1.8rem 2rem;
+                border-radius: 20px;
+                border: 1px solid rgb(255, 255, 255);
+                box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+                text-align: center;">
+                
+                <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 1.4rem;">
+                    I usually reply within a few days in <strong>French</strong> or <strong>English</strong>.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+
+                    <a class="social-link" href="mailto:your.email@example.com" style="padding: 0.55rem 1.1rem;">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+
+                    <a class="social-link" href="https://github.com/lucasmtse" target="_blank" rel="noopener" style="padding: 0.55rem 1.1rem;">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+
+                    <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener" style="padding: 0.55rem 1.1rem;">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <span>© <span id="year"></span> · Built by Lucas Miedzyrzecki.</span>
+            <span>Made with HTML · CSS · a bit of JS · hosted on GitHub Pages.</span>
+        </footer>
+    </main>
+
+    <script>
+        // Dynamic year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Simple project filter
+        const filterChips = document.querySelectorAll(".filter-chip");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        filterChips.forEach(chip => {
+            chip.addEventListener("click", () => {
+                const filter = chip.dataset.filter;
+                filterChips.forEach(c => c.classList.remove("active"));
+                chip.classList.add("active");
+
+                projectCards.forEach(card => {
+                    const tags = (card.dataset.tags || "").split(" ");
+                    if (filter === "all" || tags.includes(filter)) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
